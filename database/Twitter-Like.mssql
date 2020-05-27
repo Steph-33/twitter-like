@@ -1,0 +1,182 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.5deb2
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : localhost:3306
+-- Généré le : mer. 27 mai 2020 à 21:35
+-- Version du serveur :  8.0.20-0ubuntu0.20.04.1
+-- Version de PHP : 7.4.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données : `Twitter-Like`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Reply`
+--
+
+CREATE TABLE `Reply` (
+  `replyId` int NOT NULL,
+  `tweetId` int NOT NULL,
+  `userId` int NOT NULL,
+  `retweetId` int NOT NULL,
+  `replyDate` date NOT NULL,
+  `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `countLikes` int NOT NULL,
+  `countRetweet` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Retweet`
+--
+
+CREATE TABLE `Retweet` (
+  `retweetId` int NOT NULL,
+  `tweetId` int NOT NULL,
+  `userId` int NOT NULL,
+  `retweetDate` date NOT NULL,
+  `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `url` int NOT NULL,
+  `countLikes` int NOT NULL,
+  `countRetweet` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Tweet`
+--
+
+CREATE TABLE `Tweet` (
+  `tweetId` int NOT NULL,
+  `userId` int NOT NULL,
+  `userName` varchar(30) NOT NULL,
+  `userPseudo` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `tweetDate` date NOT NULL,
+  `content` text NOT NULL,
+  `url` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `countLikes` int NOT NULL,
+  `countRetweet` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `User`
+--
+
+CREATE TABLE `User` (
+  `userId` int NOT NULL,
+  `userName` varchar(30) NOT NULL,
+  `userPseudo` varchar(30) NOT NULL,
+  `userPassword` varchar(30) NOT NULL,
+  `userEmailAdress` varchar(30) NOT NULL,
+  `userPicture` blob NOT NULL COMMENT 'stockage des images de profil'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `Reply`
+--
+ALTER TABLE `Reply`
+  ADD PRIMARY KEY (`replyId`),
+  ADD KEY `tweetId` (`tweetId`),
+  ADD KEY `userId` (`userId`),
+  ADD KEY `retweetId` (`retweetId`);
+
+--
+-- Index pour la table `Retweet`
+--
+ALTER TABLE `Retweet`
+  ADD PRIMARY KEY (`retweetId`),
+  ADD KEY `tweetId` (`tweetId`),
+  ADD KEY `userId` (`userId`);
+
+--
+-- Index pour la table `Tweet`
+--
+ALTER TABLE `Tweet`
+  ADD PRIMARY KEY (`tweetId`),
+  ADD KEY `userId` (`userId`);
+
+--
+-- Index pour la table `User`
+--
+ALTER TABLE `User`
+  ADD PRIMARY KEY (`userId`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `Reply`
+--
+ALTER TABLE `Reply`
+  MODIFY `replyId` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `Retweet`
+--
+ALTER TABLE `Retweet`
+  MODIFY `retweetId` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `Tweet`
+--
+ALTER TABLE `Tweet`
+  MODIFY `tweetId` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `User`
+--
+ALTER TABLE `User`
+  MODIFY `userId` int NOT NULL AUTO_INCREMENT;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `Reply`
+--
+ALTER TABLE `Reply`
+  ADD CONSTRAINT `Reply_ibfk_1` FOREIGN KEY (`tweetId`) REFERENCES `Tweet` (`tweetId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `Reply_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `User` (`userId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `Reply_ibfk_3` FOREIGN KEY (`retweetId`) REFERENCES `Retweet` (`retweetId`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Contraintes pour la table `Retweet`
+--
+ALTER TABLE `Retweet`
+  ADD CONSTRAINT `Retweet_ibfk_1` FOREIGN KEY (`tweetId`) REFERENCES `Tweet` (`tweetId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `Retweet_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `User` (`userId`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Contraintes pour la table `Tweet`
+--
+ALTER TABLE `Tweet`
+  ADD CONSTRAINT `Tweet_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `User` (`userId`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
