@@ -4,7 +4,7 @@ const handlebars = require("express-handlebars");
 const server = express();
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
-const serialize = require('serialize-javascript');
+// const serialize = require('serialize-javascript');
 // const db = new mysql.Database('/')
 
 server.use(bodyParser.urlencoded({ extended: false }))
@@ -34,11 +34,14 @@ mySqlClient.connect();
 // Routes en POST afin de récuperer la req.body 
 server.post('/inscription', (request,response) => {
     var username = request.body.userName;
-    console.log(username)
-    mysql.serialize(function() {  
-        mysql.run(`INSERT into User(userName) VALUES ('${username}')`);   
-    })  
-    response.render('home')
+
+    // console.log(request)
+    // console.log(username)
+    mySqlClient.query(`INSERT INTO User(userName, userPseudo, userPassword, userEmailAdress, userPicture ) VALUES (?, ?, ?, ?, ?)` , [`${username}`,'qdsq', 'dqsdq', 'dqds', 'qdsqs'], (error) => {response.render('home')})
+    // // mysql.serialize(function() {  
+        // mysql(`INSERT into User(userName) VALUES ('${username}')`);   
+    // })  
+    
 })
 mySqlClient.end();
 
