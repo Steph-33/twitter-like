@@ -10,6 +10,8 @@ const server = express();
 server.engine('handlebars',handlebars());
 server.set('view engine','handlebars');
 
+server.use(express.static('assets'));
+
 server.use(bodyParser.urlencoded({ extended: false }))
 server.use(bodyParser.json())
 

@@ -4,10 +4,19 @@ const express = require("express");
 const router = express.Router();
 
 const tweetRouter = require("./tweet");
-router.get("/tweetactu", tweetRouter);
+// router.get("/tweetactu", tweetRouter);
+
+router.get("/tweetactu", (request, response) => {
+  response.render("tweetactu", {
+    style:"/css/tweetactu.css"
+  });
+});
+
 
 router.get("/", (request, response) => {
-  response.render("home.handlebars");
+  response.render("home", {
+    style:"/css/home.css"
+  });
 });
 
 router.get("*", (request, response) => {
