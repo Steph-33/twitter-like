@@ -8,17 +8,18 @@ exports.add = (request, response) => {
         response.status(500).send(error.message);
       }
   
-      response.render("/tweetActu");
+      response.render("/tweetactu");
     });
   };
 
 exports.findAll = (request, response) => {
-    Tweet.getAll((error, Tweet) => {
-        if (error) {
-        response.status(500).send(error.message);
-        }
+  response.render("tweetactu")
+    // Tweet.getAll((error, tweet) => {
+    //     if (error) {
+    //     response.status(500).send(error.message);
+    //     }
 
-        response.render("tweetActu.handlebars", { Tweet });
-        console.log(response.render)
-    });
+    //     response.render("tweetactu", { tweet });
+    //     console.log(response.render)
+    // });
 };
