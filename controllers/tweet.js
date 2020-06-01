@@ -8,14 +8,14 @@ exports.add = (request, response) => {
         response.status(500).send(error.message);
       }
   
-      // response.render("/tweetactu");
+      response.redirect("/tweetactu");
       
-      response.render("tweetactu", {
-        // style:"/css/tweetactu.css",
-        userName:"marsipulami",
-        userPseudo:"mathilda",
-        tweetDate:"31/05/2020"
-      });
+      // response.render("tweetactu", {
+      //   // style:"/css/tweetactu.css",
+      //   userName:"marsipulami",
+      //   userPseudo:"mathilda",
+      //   tweetDate:"31/05/2020"
+      // });
     });
 };
 
@@ -30,9 +30,9 @@ exports.findAll = (request, response) => {
         
         response.render("tweetactu",{
           // style:"/css/tweetactu.css",
-          userName:"marsipulami",
-          userPseudo:"mathilda",
-          tweetDate:"31/05/2020",
+          // userName:"marsipulami",
+          // userPseudo:"mathilda",
+          // tweetDate:"31/05/2020",
           tweet : tweet
         });
         // console.log(response.render)

@@ -20,6 +20,9 @@ server.use(bodyParser.json())
 
 server.use(router);
 
+// server.use(passport.initialize());
+// server.use(passport.session());
+
 orm.connectToDB();
 
 server.listen(8080, () => {

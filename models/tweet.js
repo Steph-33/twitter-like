@@ -43,7 +43,7 @@ class Tweet {
       }
   
       console.log("Vos tweets : ", result);
-      callback(null, result);
+      callback(null,result);
     });
   }
 };
