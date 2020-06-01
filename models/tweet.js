@@ -18,7 +18,6 @@ class Tweet {
   }
 
   static create(newTweet, callback) {
-      // db.connect()
       db.query("INSERT INTO Tweet SET ?", newTweet, (error, result) => {
         if (error) {
           console.log("error: ", error);
@@ -33,7 +32,6 @@ class Tweet {
           ...newTweet,
         });
       });
-      // db.end()
     }
 
   static getAll(callback) {

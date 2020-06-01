@@ -7,7 +7,7 @@
                     <div></div>
                 </div>
             </div>
-            <img id=tweetactu_left_header_logo alt=logo >
+            <img id=tweetactu_left_header_logo alt=logo src="monster_tweety.png">
         </div>
         
         <div id=tweetactu_left_div2>
@@ -50,17 +50,17 @@
 
         </div>
 
-        {{!-- {{#each tweet}}  --}}
+        {{#each tweet}} 
         <div id=tweetactu_filActu_archive>
             <p class=archive-userInfo> {{userName}} @{{userPseudo}}</p>
             <p class=archive-tweetDate> {{tweetDate}} </p>
-            <p class=archive-tweetPublished>{{tweetContent}}<p/>
+            <p class=archive-tweetPublished>{{content}}<p/>
             <p class=archive-countLikes > Likes </p>
             <p class=archive-countRetweet > Retweet</p>
             <p class=archive-url> https://qeswgvyjkln </p>
 
         </div>
-        {{!-- {{/each}} --}}
+        {{/each}}
 
         {{!-- {{> histoTweet}} --}}
     </main>

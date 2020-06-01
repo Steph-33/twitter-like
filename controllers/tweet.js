@@ -2,7 +2,7 @@ const Tweet = require("../models/tweet");
 
 exports.add = (request, response) => {
     const newTweet = new Tweet(request.body);
-  
+    console.log(request.body)
     Tweet.create(newTweet, (error, data) => {
       if (error) {
         response.status(500).send(error.message);
@@ -11,11 +11,10 @@ exports.add = (request, response) => {
       // response.render("/tweetactu");
       
       response.render("tweetactu", {
-        style:"/css/tweetactu.css",
+        // style:"/css/tweetactu.css",
         userName:"marsipulami",
         userPseudo:"mathilda",
-        tweetDate:"31/05/2020",
-        tweetContent: "blabla"
+        tweetDate:"31/05/2020"
       });
     });
 };
@@ -34,6 +33,7 @@ exports.findAll = (request, response) => {
           userName:"marsipulami",
           userPseudo:"mathilda",
           tweetDate:"31/05/2020",
+          tweet : tweet
         });
         // console.log(response.render)
   });
