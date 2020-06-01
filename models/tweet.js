@@ -1,20 +1,24 @@
-const db = require("../database/database");
+// const db = require("../database/database");
+
+var orm = require("./../database/database.js");
+
+let db = orm.connectToDB();
 
 class Tweet {
   constructor(props) {
-    const { userName, userPseudo, tweetDate, content, url, countLikes, countRetweet } = props;
-
-    this._userName = userName;
-    this._userPseudo = userPseudo;
-    this._tweetDate = tweetDate;
-    this._content = content;
-    this._url = url ;
-    this._countLikes = countLikes || 0;
-    this._countRetweet = countRetweet || 0;
+    const { userName, userPseudo, tweetDate, tweetContent, url, countLikes, countRetweet } = props;
+    console.log(props)
+    this.userName = userName;
+    this.userPseudo = userPseudo;
+    this.tweetDate = tweetDate;
+    this.content = tweetContent;
+    this.url = url ;
+    this.countLikes = countLikes || 0;
+    this.countRetweet = countRetweet || 0;
   }
 
   static create(newTweet, callback) {
-      db.connect()
+      // db.connect()
       db.query("INSERT INTO Tweet SET ?", newTweet, (error, result) => {
         if (error) {
           console.log("error: ", error);
@@ -29,7 +33,7 @@ class Tweet {
           ...newTweet,
         });
       });
-      db.end()
+      // db.end()
     }
 
   static getAll(callback) {

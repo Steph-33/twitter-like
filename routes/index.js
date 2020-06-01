@@ -6,38 +6,44 @@ let urlencodedParser =bodyParser.urlencoded({ extended: false })
 const router = express.Router();
 
 const tweetRouter = require("./tweet");
+const tweetController = require('../controllers/tweet');
+const Tweet = require("../models/tweet");
 
 
 // ------> routes GET & POST pour page "tweetactu"
-router.get("/tweetactu", (request,response)=> {
-  response.render("tweetactu", {
-    // style:"/css/home.css",
-    userName:"marsipulami",
-    userPseudo:"mathilda",
-    tweetDate:"31/05/2020",
-  });
-})
+// router.get("/tweetactu", (request,response)=> {
+//   response.render("tweetactu", {
+//     // style:"/css/home.css",
+//     userName:"marsipulami",
+//     userPseudo:"mathilda",
+//     tweetDate:"31/05/2020",
+//   });
+// });
 
 // router.get("/tweetactu", (request,response)=> {
-//   let tweetMessage = require('../controllers/tweet');
-//   tweetMessage.findAll((tweetMessages) => {
+//   Tweet.getAll((error, tweet) => {
+//     if (error) {
+//     response.status(500).send(error.message);
+//     }
+
 //     response.render("tweetactu", {
-//       style:"/css/tweetactu.css",
-//       userName:"tweetMessages"
+//       // style:"/css/home.css",
+//       userName:"marsipulami",
+//       userPseudo:"mathilda",
+//       tweetDate:"31/05/2020",
 //     });
 //   })
 // })
 
+router.get("/tweetactu", tweetController.findAll);
 
-router.post("/tweetactu", (request, response) => {
-  response.render("tweetactu", {
-    // style:"/css/home.css",
-    userName:"marsipulami",
-    userPseudo:"mathilda",
-    tweetDate:"31/05/2020",
-    tweetContent: "blabla"
-  });
-});
+router.post("/tweetactu", tweetController.add)
+
+// router.post("/tweetactu", (request, response) => {
+//   console.log("coucou")
+
+//   response.redirect("/tweetactu")
+// });
 
 // router.post("/tweetactu", urlencodedParser, (request, response) => {
 //   let tweetMessage = require('../controllers/tweet');
