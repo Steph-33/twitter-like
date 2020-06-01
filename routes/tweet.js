@@ -9,7 +9,7 @@ tweetRouter.get("/", tweetController.findAll);
 
 // db.connect();
 
-tweetRouter.post("/", tweetController.add);
+// tweetRouter.post("/", tweetController.add);
 
 // db.end();
 

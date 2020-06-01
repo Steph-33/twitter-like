@@ -1,1 +1,29 @@
 <h1>Twitter fil d'actu</h1>
+
+<div class=tweet-creation>
+    <p class=userInfo> {{userName}} @{{userPseudo}}</p>
+    <p class=tweetDate> {{tweetDate}} </p>
+    <form method="POST" action="/tweetactu">
+        <textarea class="tweetContent" name="tweetContent" cols="50"  maxlength="140" placeholder="What's new ?"> </textarea>
+        <button type="submit">Publish</button>
+    </form>
+    <p class=countLikes > Likes </p>
+    <p class=countRetweet > Retweet</p>
+    <p class=url> https://qeswgvyjkln </p>
+
+</div>
+
+{{!-- {{#each tweet}}  --}}
+<div class=tweet-archive>
+    <p class=userInfo> {{userName}} @{{userPseudo}}</p>
+    <p class=tweetDate> {{tweetDate}} </p>
+    <p class=tweetPublished>{{tweetContent}}<p/>
+    <p class=countLikes > Likes </p>
+    <p class=countRetweet > Retweet</p>
+    <p class=url> https://qeswgvyjkln </p>
+
+</div>
+{{!-- {{/each}} --}}
+
+
+{{!-- {{> histoTweet}} --}}
