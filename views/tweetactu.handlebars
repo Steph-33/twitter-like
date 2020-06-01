@@ -1,29 +1,74 @@
-<h1>Twitter fil d'actu</h1>
+<section id=tweetactu>   
+    <section id=tweetactu_left>
+        <div id=tweetactu_left_header>
+            <div id=tweetactu_left_header_title>
+                <h2>MONSTER TWEETY</h2>
+                <div id=tweetactu_left_header_title-under>
+                    <div></div>
+                </div>
+            </div>
+            <img id=tweetactu_left_header_logo alt=logo >
+        </div>
+        
+        <div id=tweetactu_left_div2>
+            <div></div>
+        </div>
+        
+        <div id=tweetactu_left_div3>
+            <div id=tweetactu_left_div3_left></div>
+            <div></div>
+            <div id=tweetactu_left_div3_right></div>
+        </div>
+        
+        <div id=tweetactu_left_div4>
+            <div id=tweetactu_left_div4_left>
+                <div></div>
+            </div>
+            <div id=tweetactu_left_div4_right>
+                <div></div>
+            </div>
+        </div>
+        
+        <div id=tweetactu_left_div5>
+            <div></div>
+        </div>
+    </section>
 
-<div class=tweet-creation>
-    <p class=userInfo> {{userName}} @{{userPseudo}}</p>
-    <p class=tweetDate> {{tweetDate}} </p>
-    <form method="POST" action="/tweetactu">
-        <textarea class="tweetContent" name="tweetContent" cols="50"  maxlength="140" placeholder="What's new ?"> </textarea>
-        <button type="submit">Publish</button>
-    </form>
-    <p class=countLikes > Likes </p>
-    <p class=countRetweet > Retweet</p>
-    <p class=url> https://qeswgvyjkln </p>
+    <main id=tweetactu_filActu>
+        <h1>Accueil monstre</h1>
 
-</div>
+        <div id=tweetactu_filActu_creation>
+            <p class=creation-userInfo> {{userName}} @{{userPseudo}}</p>
+            <p class=creation-tweetDate> {{tweetDate}} </p>
+            <form method="POST" action="/tweetactu">
+                <textarea class=creation-tweetContent name="tweetContent" cols="50"  maxlength="140" placeholder="What's new ?"> </textarea>
+                <button type="submit">Publish</button>
+            </form>
+            <p class=creation-countLikes > Likes </p>
+            <p class=creation-countRetweet > Retweet</p>
+            <p class=creation-url> https://qeswgvyjkln </p>
 
-{{!-- {{#each tweet}}  --}}
-<div class=tweet-archive>
-    <p class=userInfo> {{userName}} @{{userPseudo}}</p>
-    <p class=tweetDate> {{tweetDate}} </p>
-    <p class=tweetPublished>{{tweetContent}}<p/>
-    <p class=countLikes > Likes </p>
-    <p class=countRetweet > Retweet</p>
-    <p class=url> https://qeswgvyjkln </p>
+        </div>
 
-</div>
-{{!-- {{/each}} --}}
+        {{!-- {{#each tweet}}  --}}
+        <div id=tweetactu_filActu_archive>
+            <p class=archive-userInfo> {{userName}} @{{userPseudo}}</p>
+            <p class=archive-tweetDate> {{tweetDate}} </p>
+            <p class=archive-tweetPublished>{{tweetContent}}<p/>
+            <p class=archive-countLikes > Likes </p>
+            <p class=archive-countRetweet > Retweet</p>
+            <p class=archive-url> https://qeswgvyjkln </p>
 
+        </div>
+        {{!-- {{/each}} --}}
 
-{{!-- {{> histoTweet}} --}}
+        {{!-- {{> histoTweet}} --}}
+    </main>
+
+    <section id=tweetactu_right>
+        <div>
+            <p>test</p>
+        </div>
+    </section>
+
+</section>

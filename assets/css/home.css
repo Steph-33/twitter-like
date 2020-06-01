@@ -1,4 +1,139 @@
-header{
-    display: flex;
-    color: blue;
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
 }
+
+#tweetactu {
+  height: 99vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+#tweetactu_left {
+  height: 100%;
+  width: 25%;
+  border: solid medium black;
+}
+#tweetactu_left_header {
+  background-color: white;
+  border-bottom: solid medium black;
+  height: 23%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+#tweetactu_left_header_title {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  border-right: solid medium black;
+  font-size: 0.9rem;
+}
+#tweetactu_left_header_title-under {
+  border-top: solid medium black;
+  height: 50%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+#tweetactu_left_header_title-under > div {
+  background-color: #FBD531;
+  border-left: solid medium black;
+  width: 33%;
+}
+#tweetactu_left_header_logo {
+  width: 55%;
+  background-image: url("/img/monster_tweety.png");
+  background-color: gray;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#tweetactu_left_div2 {
+  height: 5%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+#tweetactu_left_div2 > div {
+  width: 70.4%;
+  background-color: #DD0000;
+  border-left: solid medium black;
+  border-bottom: solid medium black;
+}
+#tweetactu_left_div3 {
+  height: 20%;
+  width: 100%;
+  border-bottom: solid medium black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#tweetactu_left_div3_left {
+  width: 28.6%;
+  height: 100%;
+  border-right: solid medium black;
+}
+#tweetactu_left_div3_right {
+  width: 22%;
+  height: 100%;
+  background-color: #0F15A7;
+  border-left: solid medium black;
+}
+#tweetactu_left_div4 {
+  height: 25%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#tweetactu_left_div4_left {
+  width: 28.9%;
+  border-right: solid medium black;
+  display: flex;
+  flex-direction: column;
+}
+#tweetactu_left_div4_left div {
+  height: 45px;
+  width: 45px;
+  background-color: #FBD531;
+  border-bottom: solid medium black;
+  border-right: solid medium black;
+}
+#tweetactu_left_div4_right {
+  width: 70.4;
+  display: flex;
+  flex-direction: column-reverse;
+  align-content: space-between;
+}
+#tweetactu_left_div4_right div {
+  height: 70px;
+  width: 70px;
+  background-color: #DD0000;
+  border-top: solid medium black;
+  border-left: solid medium black;
+}
+#tweetactu_left_div5 {
+  height: 25%;
+  width: 100%;
+  border-top: solid medium black;
+}
+#tweetactu_left_div5 div {
+  width: 28.6%;
+  height: 100%;
+  background-color: #0F15A7;
+  border-right: solid medium black;
+}
+#tweetactu_filActu {
+  height: 100%;
+  width: 50%;
+  background-color: #FBD531;
+  border-bottom: solid medium black;
+  border-top: solid medium black;
+}
+#tweetactu_right {
+  height: 100%;
+  width: 25%;
+  background-color: red;
+  border: solid medium black;
+}
+
+/*# sourceMappingURL=home.css.map */

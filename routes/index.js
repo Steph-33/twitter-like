@@ -1,5 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser")
+let urlencodedParser =bodyParser.urlencoded({ extended: false })
+
 // midleware express
 const router = express.Router();
 
@@ -9,16 +11,27 @@ const tweetRouter = require("./tweet");
 // ------> routes GET & POST pour page "tweetactu"
 router.get("/tweetactu", (request,response)=> {
   response.render("tweetactu", {
-    style:"/css/tweetactu.css",
+    // style:"/css/home.css",
     userName:"marsipulami",
     userPseudo:"mathilda",
     tweetDate:"31/05/2020",
   });
 })
 
+// router.get("/tweetactu", (request,response)=> {
+//   let tweetMessage = require('../controllers/tweet');
+//   tweetMessage.findAll((tweetMessages) => {
+//     response.render("tweetactu", {
+//       style:"/css/tweetactu.css",
+//       userName:"tweetMessages"
+//     });
+//   })
+// })
+
+
 router.post("/tweetactu", (request, response) => {
   response.render("tweetactu", {
-    style:"/css/tweetactu.css",
+    // style:"/css/home.css",
     userName:"marsipulami",
     userPseudo:"mathilda",
     tweetDate:"31/05/2020",
@@ -26,7 +39,14 @@ router.post("/tweetactu", (request, response) => {
   });
 });
 
+// router.post("/tweetactu", urlencodedParser, (request, response) => {
+//   let tweetMessage = require('../controllers/tweet');
+//   tweetMessage.add(request.body.tweet, () => {
+//     console.log(request.body.tweetContent)
 
+//     response.render("/tweetactu")
+//   });
+// });
 
 // ------> route en GET / POST qui utilise les fonctions du controller 
 // +++ décommenter les passages de variables handlebars dans les fonctions dans controllers/tweet.js
