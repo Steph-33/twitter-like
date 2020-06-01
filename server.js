@@ -13,6 +13,8 @@ server.set('view engine','handlebars');
 
 server.use(express.static('assets'));
 
+server.use(express.static('img'));
+
 server.use(bodyParser.urlencoded({ extended: false }))
 server.use(bodyParser.json())
 
