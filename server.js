@@ -2,6 +2,7 @@
 const express = require("express");
 const handlebars = require("express-handlebars");
 const bodyParser = require('body-parser');
+var orm = require("./database/database.js");
 
 const router = require("./routes");
 
@@ -16,6 +17,8 @@ server.use(bodyParser.urlencoded({ extended: false }))
 server.use(bodyParser.json())
 
 server.use(router);
+
+orm.connectToDB();
 
 server.listen(8080, () => {
     console.log('salut');
