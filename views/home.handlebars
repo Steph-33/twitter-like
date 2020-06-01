@@ -1,9 +1,16 @@
-<header>
+<header id="home_header">
     <img src="monster_tweety.png" alt="Logo">
     <h1>Monster Tweety</h1>
+    <button type="submit"><a href="/inscription">Connexion</a></button>
+    <button type="submit"><a href="/tweetactu">Fil d'actualité</a></button>
 </header>
-
-<button type="submit"><a href="/inscription">Inscrivez-vous</a></button>
-<button type="submit"><a href="/tweetactu">Fil d'actualité</a></button>
-
-{{tweetActu}}
+<main id="inscription">
+    <form id="inscription_form" method="POST" action="/inscription">
+        <input id="inscription_form_username" type="text" name="userName" placeholder="Name" >
+        <input id="inscription_form_userpseudo" type="text" name="userPseudo" placeholder="Pseudo">
+        <input id="inscription_form_userpassword" type="password" name="userPassword" placeholder="Password">
+        <input id="inscription_form_email" type="email" name="userEmailAdress" placeholder="EmailAdress">
+        <input id="inscription_form_userpicture" type="file" name="userPicture">
+        <button type="submit">Valider</button>
+    </form>
+</main>
