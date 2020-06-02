@@ -35,18 +35,29 @@
     </section>
 
     <main id=tweetactu_filActu>
-        <h1>Accueil monstre</h1>
+        <div id=tweetactu_filActu_titre>
+            <h1>Accueil monstre</h1>
+        </div>
 
         <div id=tweetactu_filActu_creation>
-            <p class=creation-userInfo> {{userName}} @{{userPseudo}}</p>
-            <p class=creation-tweetDate> {{tweetDate}} </p>
-            <form method="POST" action="/tweetactu">
-                <textarea class=creation-tweetContent name="tweetContent" cols="50"  maxlength="140" placeholder="What's new ?"> </textarea>
-                <button type="submit">Publish</button>
-            </form>
-            <p class=creation-countLikes > Likes </p>
-            <p class=creation-countRetweet > Retweet</p>
-            <p class=creation-url> https://qeswgvyjkln </p>
+            <p id=tweetactu_filActu_creation_infodutweet> {{userName}} @{{userPseudo}}</p>
+            <div id=tweetactu_filActu_creation_main>
+                {{!-- <div id=tweetactu_filActu_creation_main> --}}
+                <img id=tweetactu_filActu_creation_main_picture href="" alt=profil picture>
+                {{!-- </div> --}}
+                <form id=tweetactu_filActu_creation_main_content method="POST" action="/tweetactu">
+                    <textarea name="tweetContent" cols="50"  maxlength="140" placeholder="What's new ?"> </textarea>
+                    <button type="submit">Publish</button>
+                </form>
+            </div>
+            <div id=tweetactu_filActu_creation_buttons>
+                <p id=tweetactu_filActu_creation_buttons-tweetDate> {{tweetDate}} </p>
+                <button id=tweetactu_filActu_creation_buttons-countLike type="submit">&#9829; Like</button>
+                <button id=tweetactu_filActu_creation_buttons-countRetweet type="submit">&#8618; Retweet</button>
+            </div>
+            <div id=tweetactu_filActu_creation_lien>
+                <p> https://localhost:8080/tweetactu </p>
+            </div>
 
         </div>
 
