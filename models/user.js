@@ -1,6 +1,7 @@
 var orm = require("./../database/database.js");
 
 let db = orm.connectToDB();
+const bcrypt = require("bcrypt");
 
 class User {
     constructor(props) {
@@ -22,8 +23,12 @@ class User {
           }
     
           console.log("Qui es tu ?");
+          const hashedPassword = bcrypt.hash(newUser.userName)
+      
+          console.log(hashedPassword)
           callback(null, {
             userId: result.insertId,
+            userPassword: hashedPassword,
             // id: result.insertId,
             ...newUser,
           });
