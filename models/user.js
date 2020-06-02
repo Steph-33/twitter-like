@@ -1,14 +1,16 @@
-const db = require("../database/database");
+var orm = require("./../database/database.js");
+
+let db = orm.connectToDB();
 
 class User {
     constructor(props) {
-      const { userName, userPseudo, tweetDate, content } = props;
+      const { userName, userPseudo, userPassword, userEmailAdress, userPicture } = props;
   
-      this._userName = userName;
-      this._userPseudo = userPseudo;
-      this._userPassword = userPassword;
-      this._userEmailAdress = userEmailAdress;
-      this._userPicture = userPicture;
+      this.userName = userName;
+      this.userPseudo = userPseudo;
+      this.userPassword = userPassword;
+      this.userEmailAdress = userEmailAdress;
+      this.userPicture = userPicture;
     }
 
     static create(newUser, callback) {
@@ -27,20 +29,6 @@ class User {
           });
         });
       }
-
-    static getAll(callback) {
-      db.query("SELECT * FROM User", (error, result) => {
-        if (error) {
-          console.log("error: ", error);
-          callback(error, null);
-          return;
-        }
-    
-        console.log("Ton profil : ", result);
-        callback(null, result);
-      });
-    }
-
 };
     
 module.exports = User;
