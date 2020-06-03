@@ -42,7 +42,7 @@ class Tweet {
         return;
       }
   
-      console.log("Vos tweets : ", result);
+      console.log("Vos tweets : ", result[0].content);
       callback(null,result);
     });
   }

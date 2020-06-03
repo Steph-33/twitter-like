@@ -23,12 +23,12 @@ class User {
           }
     
           console.log("Qui es tu ?");
-          const hashedPassword = bcrypt.hash(newUser.userName)
+          // const hashedPassword = bcrypt.hash(newUser.userName)
       
-          console.log(hashedPassword)
+          // console.log(hashedPassword)
           callback(null, {
             userId: result.insertId,
-            userPassword: hashedPassword,
+            // userPassword: hashedPassword,
             // id: result.insertId,
             ...newUser,
           });

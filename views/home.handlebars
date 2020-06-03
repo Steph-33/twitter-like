@@ -5,6 +5,13 @@
     <button type="submit"><a href="/tweetactu">Fil d'actualité</a></button>
 </header>
 <main id="connexion">
+
+    <div class="alert">
+        {{#if messages.error}}
+        <h1>{{messages.error}}</h1>
+        {{/if}}
+    </div>
+
     <form id="connexion_form" method="POST" action="/tweetactu">
         <input id="connexion_form_email" type="email" name="userEmailAdress" placeholder="EmailAdress">
         <input id="connexion_form_userpassword" type="password" name="userPassword" placeholder="Password">
