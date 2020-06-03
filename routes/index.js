@@ -1,7 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser")
 let urlencodedParser = bodyParser.urlencoded({ extended: false })
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
+const passport = require('passport');
+const connectFlash = require('connect-flash');
+const flash = require('express-flash')
 
 // midleware express
 const router = express.Router();
@@ -30,15 +33,16 @@ router.post("/inscription", userController.add);
 // -----> routes générales pour home etc
 router.get("/", (request, response) => {
   response.render("home", {
-    style:"/css/home.css"
+    style:"/css/home.css",
+    messages: request.flash('info')
   });
 });
 
-router.post("/", (request, response) => {
-  // if(request.body.email == "SELECT userEmailAdress from User" && request.body.password)
-  // request.body.email
-  response.redirect('/tweetactu');
-});
+router.post("/", passport.authenticate('local', {
+  successRedirect: '/tweetactu',
+  failureRedirect: '/',
+  failureFlash: true
+}));
 
 router.get("*", (request, response) => {
   response.status(404).render("404.handlebars");
