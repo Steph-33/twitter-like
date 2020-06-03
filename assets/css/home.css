@@ -29,6 +29,7 @@ body {
   flex-direction: column;
   border-right: solid medium black;
   font-size: 0.9rem;
+  font-weight: bolder;
 }
 #tweetactu_left_header_title-under {
   border-top: solid medium black;
@@ -123,6 +124,53 @@ body {
   background-color: #FBD531;
   border-bottom: solid medium black;
   border-top: solid medium black;
+  display: flex;
+  flex-direction: column;
+}
+#tweetactu_filActu_titre {
+  height: 10%;
+  background-color: #0F15A7;
+  border-bottom: solid medium black;
+  color: white;
+  font-size: 0.8;
+  font-weight: bold;
+}
+#tweetactu_filActu_creation {
+  height: 90%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+#tweetactu_filActu_creation_infodutweet {
+  height: 4%;
+  color: grey;
+  font-size: 0.65rem;
+}
+#tweetactu_filActu_creation_main {
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+#tweetactu_filActu_creation_main_picture {
+  height: 3rem;
+  width: 3rem;
+  background-color: grey;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+}
+#tweetactu_filActu_creation_main_content {
+  width: 70%;
+}
+#tweetactu_filActu_creation_buttons {
+  height: 5%;
+  display: flex;
+}
+#tweetactu_filActu_creation_lien {
+  height: 5%;
+  display: flex;
+  font-size: 0.8rem;
 }
 #tweetactu_right {
   height: 100%;
