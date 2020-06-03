@@ -41,7 +41,9 @@ router.get("/", (request, response) => {
 router.post("/", passport.authenticate('local', {
   successRedirect: '/tweetactu',
   failureRedirect: '/',
-  failureFlash: true
+  failureFlash: true,
+  // Fonctionne avec connect-flash. Problème : fonction pas allumée. 
+  successFlash: 'Welcome!'
 }));
 
 router.get("*", (request, response) => {
