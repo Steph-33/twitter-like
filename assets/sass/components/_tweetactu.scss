@@ -23,6 +23,7 @@
                 flex-direction: column;
                 border-right: $border-ok; 
                 font-size: 0.9rem;
+                font-weight: bolder;
 
                     &-under{
                         border-top: $border-ok;
@@ -126,6 +127,63 @@
         background-color: $color-yellow;
         border-bottom: $border-ok;    
         border-top: $border-ok;
+        display: flex;
+        flex-direction: column;
+
+        &_titre{
+            height: 10%;
+            background-color: $color-blue;
+            border-bottom: $border-ok;
+            color: white;
+            font-size: 0.8 ;
+            font-weight: bold;
+        }
+
+        &_creation{
+            height:90%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+
+            &_infodutweet{
+                height: 4%;
+                color: grey;
+                font-size: 0.65rem;
+            }
+
+            &_main{
+                height:70%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: flex-start;
+
+                &_picture{
+                    height: 3rem;
+                    width: 3rem;
+                    background-color: grey;
+                    border-radius: 2rem;
+                    font-size: 0.8rem;
+                }
+                &_content{
+                    // height: 100%;
+                    width:70%;
+                }
+            }
+
+            &_buttons{
+                height:5%;
+                display:flex;
+            }
+
+            &_lien{
+                height:5%;
+                display:flex;
+                font-size: 0.8rem;
+            }
+        }
+
+
     }
 
     &_right{
