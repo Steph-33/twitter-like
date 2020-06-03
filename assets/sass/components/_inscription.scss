@@ -1,0 +1,74 @@
+#inscription{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+
+    &_left{
+        display: flex;
+        flex-direction: column;
+
+        &_top{
+            display: flex;
+            flex-direction: row;
+
+            &_left{
+                width : 10rem;
+                height: 10rem;
+                background-color: $color-yellow;
+                border: $border-ok;
+            }
+
+            &_right{
+                width : 20rem;
+                height: 6.1rem;
+                border-bottom: $border-ok;
+                text-align: center;
+                padding-top: 6.3%;
+            }
+        }
+
+        &_middle{
+            display: flex;
+            flex-direction: row;
+
+            &_left{
+                width: 10rem;
+                height: 30rem;
+                border-right: $border-ok;
+            }
+
+            &_right{
+                width: 20rem;
+                height: 30rem;
+                border-right: $border-ok;
+            }
+
+
+        }
+
+
+
+
+
+
+
+    }
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

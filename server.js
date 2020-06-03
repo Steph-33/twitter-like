@@ -38,11 +38,11 @@ server.use(bodyParser.urlencoded({ extended: false }))
 server.use(bodyParser.json())
 server.use(flash())
 server.use(session({
-    secret: process.env.SESSION_SECRET,
-    resave:false,
-    saveUninitialized : false
+    secret: 'licorne',
+    cookie: { maxAge: null },
+    resave:true,
+    saveUninitialized : true
 }))
-
 
 server.use(router);
 

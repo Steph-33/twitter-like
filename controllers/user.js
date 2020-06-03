@@ -1,5 +1,4 @@
 const User = require("../models/user");
-const bcrypt = require("bcrypt");
 
 exports.add = (request, response) => {
     const newUser = new User(request.body);

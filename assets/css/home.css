@@ -131,4 +131,47 @@ body {
   border: solid medium black;
 }
 
+#inscription {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+}
+#inscription_left {
+  display: flex;
+  flex-direction: column;
+}
+#inscription_left_top {
+  display: flex;
+  flex-direction: row;
+}
+#inscription_left_top_left {
+  width: 10rem;
+  height: 10rem;
+  background-color: #FBD531;
+  border: solid medium black;
+}
+#inscription_left_top_right {
+  width: 20rem;
+  height: 6.1rem;
+  border-bottom: solid medium black;
+  text-align: center;
+  padding-top: 6.3%;
+}
+#inscription_left_middle {
+  display: flex;
+  flex-direction: row;
+}
+#inscription_left_middle_left {
+  width: 10rem;
+  height: 30rem;
+  border-right: solid medium black;
+}
+#inscription_left_middle_right {
+  width: 20rem;
+  height: 30rem;
+  border-right: solid medium black;
+}
+
 /*# sourceMappingURL=home.css.map */

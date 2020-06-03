@@ -1,7 +1,6 @@
 var orm = require("./../database/database.js");
 
 let db = orm.connectToDB();
-const bcrypt = require("bcrypt");
 
 class User {
     constructor(props) {

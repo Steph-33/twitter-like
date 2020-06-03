@@ -1,8 +1,5 @@
-var passport = require("passport");
+// var passport = require("./passport");
 var LocalStrategy = require("passport-local").Strategy;
-
-
-
 
 function initialize(passport) {
   const authenticateUser = async (userEmailAdress, password, done ) => {
@@ -15,7 +12,7 @@ function initialize(passport) {
     }
     return done(null, user); 
   }
-
+  
   passport.use( new LocalStrategy( {usernameField: 'userEmailAdress' }, authenticateUser))
   passport.serializeUser(function (user, done) {done(null, user);});
   passport.deserializeUser(function (user, done) {done(null, user);});
