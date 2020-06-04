@@ -1,27 +1,59 @@
-// var passport = require("./passport");
 var LocalStrategy = require("passport-local").Strategy;
+var User = require('./models/user');
 
-function initialize(passport) {
-  const authenticateUser = async (userEmailAdress, password, done ) => {
-    const user = await getUserByEmail(userEmailAdress)
-    if (user == null) {
-      return done( null, false, { message : 'Utilisateur inconnu'})
+module.exports = (passport) => {
+  passport.use(new LocalStrategy(
+    {
+      usernameField: 'userEmailAdress',
+      passwordField: 'userPassword'
+    },
+    function(userEmailAdress, password, done) {
+      console.log(userEmailAdress,password);
+      User.findOne(userEmailAdress, (err, user) => {
+        console.log(user);
+        if (err) { return done(err); }
+        if (!user) {
+          return done(null, false, { message: 'Incorrect email.' });
+        }
+        if (password !== user.userPassword) {
+          return done(null, false, { message: 'Incorrect password.' });
+        }
+        return done(null, user);
+      });
     }
-    if (password !== user.userPassword) {
-      return done(null, false ,{message : 'Password incorrect'});
-    }
-    return done(null, user); 
-  }
-  
-  passport.use( new LocalStrategy( {usernameField: 'userEmailAdress' }, authenticateUser))
+  ));
+
+  // Code serialize/deserialize trouvé dans la doc. 
   passport.serializeUser(function (user, done) {done(null, user);});
   passport.deserializeUser(function (user, done) {done(null, user);});
+}
+
+
+
+
+
+
+// function initialize(passport) {
+//   const authenticateUser = async (userEmailAdress, password, done ) => {
+//     const user = await getUserByEmail(userEmailAdress)
+//     if (user == null) {
+//       return done( null, false, { message : 'Utilisateur inconnu'})
+//     }
+//     if (password !== user.userPassword) {
+//       return done(null, false ,{message : 'Password incorrect'});
+//     }
+//     return done(null, user); 
+//   }
+  
+//   passport.use( new LocalStrategy( {usernameField: 'userEmailAdress' }, authenticateUser))
+//   passport.serializeUser(function (user, done) {done(null, user);});
+//   passport.deserializeUser(function (user, done) {done(null, user);});
   
 
-  }
+//   }
 
 
-  module.exports = initialize
+//   module.exports = initialize
 
 
 

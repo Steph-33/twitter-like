@@ -179,10 +179,13 @@ body {
   border: solid medium black;
 }
 
-#inscription {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+#inscription {
   display: flex;
   flex-direction: row;
 }
@@ -202,10 +205,10 @@ body {
 }
 #inscription_left_top_right {
   width: 20rem;
-  height: 6.1rem;
+  height: 10rem;
   border-bottom: solid medium black;
   text-align: center;
-  padding-top: 6.3%;
+  padding-top: 12%;
 }
 #inscription_left_middle {
   display: flex;

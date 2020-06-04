@@ -3,7 +3,6 @@ const bodyParser = require("body-parser")
 let urlencodedParser = bodyParser.urlencoded({ extended: false })
 // const bcrypt = require("bcrypt");
 const passport = require('passport');
-const connectFlash = require('connect-flash');
 const flash = require('express-flash')
 
 // midleware express
@@ -32,19 +31,20 @@ router.post("/inscription", userController.add);
 
 // -----> routes générales pour home etc
 router.get("/", (request, response) => {
-  response.render("home", {
-    style:"/css/home.css",
-    messages: request.flash('info')
-  });
+  response.render("home")
 });
 
 router.post("/", passport.authenticate('local', {
-  successRedirect: '/tweetactu',
+  // successRedirect: '/tweetactu',
   failureRedirect: '/',
-  failureFlash: true,
+  // failureFlash: true,
   // Fonctionne avec connect-flash. Problème : fonction pas allumée. 
-  successFlash: 'Welcome!'
-}));
+  // successFlash: 'Welcome!'
+}),
+  function(request,response){
+    response.redirect('/tweetactu');
+  }
+);
 
 router.get("*", (request, response) => {
   response.status(404).render("404.handlebars");
