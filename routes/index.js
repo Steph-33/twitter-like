@@ -29,6 +29,11 @@ router.get("/inscription", (request,response) => {
 
 router.post("/inscription", userController.add);
 
+//route GET profil
+router.get("/profil", (request,response) => {
+  response.render('profil.handlebars');
+});
+
 // -----> routes générales pour home etc
 router.get("/", (request, response) => {
   response.render("home", {error : request.flash('error')})
