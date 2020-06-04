@@ -14,7 +14,7 @@ class User {
     }
 
     static create(newUser, callback) {
-        db.query("INSERT INTO User SET ?", newUser, (error, result) => {
+        db.query("INSERT INTO userTable SET ?", newUser, (error, result) => {
           if (error) {
             console.log("error: ", error);
             callback(error, null);
@@ -33,6 +33,23 @@ class User {
           });
         });
       }
+
+      static findOne(userEmailAdress, callback) {
+        console.log(userEmailAdress);
+        db.query("SELECT * FROM userTable WHERE userEmailAdress = ?", [userEmailAdress], (error, result) => {
+          if (error) throw error;
+          callback(error,result[0]);
+        });
+      }
+
+      static findById(userId, callback) {
+        console.log(userId);
+        db.query("SELECT * FROM userTable WHERE userId = ?", [userId], (error, result) => {
+          if (error) throw error;
+          callback(error,result[0]);
+        });
+      }
+
 };
     
 module.exports = User;
