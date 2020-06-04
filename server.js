@@ -34,7 +34,8 @@ server.use(express.static('img'));
 server.use(bodyParser.urlencoded({ extended: false }))
 server.use(bodyParser.json())
 
-// server.use(flash())
+server.use(flash())
+
 server.use(session({
     secret: 'licorne',
     cookie: { maxAge: null },

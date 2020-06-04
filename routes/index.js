@@ -3,7 +3,7 @@ const bodyParser = require("body-parser")
 let urlencodedParser = bodyParser.urlencoded({ extended: false })
 // const bcrypt = require("bcrypt");
 const passport = require('passport');
-const flash = require('express-flash')
+const flash = require('express-flash');
 
 // midleware express
 const router = express.Router();
@@ -31,13 +31,13 @@ router.post("/inscription", userController.add);
 
 // -----> routes générales pour home etc
 router.get("/", (request, response) => {
-  response.render("home")
+  response.render("home", {error : request.flash('error')})
 });
 
 router.post("/", passport.authenticate('local', {
   // successRedirect: '/tweetactu',
   failureRedirect: '/',
-  // failureFlash: true,
+  failureFlash: 'La connexion a échoué ! ',
   // Fonctionne avec connect-flash. Problème : fonction pas allumée. 
   // successFlash: 'Welcome!'
 }),
@@ -45,6 +45,12 @@ router.post("/", passport.authenticate('local', {
     response.redirect('/tweetactu');
   }
 );
+
+router.get('/logout', (request,response) => {
+  request.logout();
+  request.session.destroy();
+  response.redirect('/');
+})
 
 router.get("*", (request, response) => {
   response.status(404).render("404.handlebars");
