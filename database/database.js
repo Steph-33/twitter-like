@@ -8,7 +8,7 @@ function connectToDB() {
  connection = mysql.createConnection({
     host     : "localhost",
     user     : "root",
-    password : "Girondins33!",
+    password : "root",
     database : "twitterlike", 
   });
 
