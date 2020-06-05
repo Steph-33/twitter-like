@@ -10,6 +10,7 @@ function connectToDB() {
     user     : "root",
     password : "root",
     database : "twitterlike", 
+    socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock' //for mac and linux
   });
 
   connection.connect(function (err) {
