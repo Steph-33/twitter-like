@@ -50,6 +50,13 @@ class User {
         });
       }
 
-};
+      static getInfo(userName,callback) {
+        console.log('log username de models',userName);
+        db.query("SELECT * FROM userTable WHERE userName = ?", [userName], (error, result) => {
+          if (error) throw error;
+          callback(error,result[0]);
+        });
+      }
+};  
     
 module.exports = User;

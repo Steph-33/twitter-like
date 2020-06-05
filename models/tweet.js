@@ -46,6 +46,8 @@ class Tweet {
       callback(null,result);
     });
   }
+
+  
 };
     
 module.exports = Tweet;

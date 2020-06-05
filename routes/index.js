@@ -30,9 +30,10 @@ router.get("/inscription", (request,response) => {
 router.post("/inscription", userController.add);
 
 //route GET profil
-router.get("/profil", (request,response) => {
-  response.render('profil.handlebars');
-});
+// router.get("/profil", (request,response) => {
+//   response.render('profil.handlebars');
+// });
+router.get("/profil", userController.findByInfo);
 
 // -----> routes générales pour home etc
 router.get("/", (request, response) => {

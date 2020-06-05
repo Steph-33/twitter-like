@@ -205,7 +205,6 @@
     #profil_content:hover {
       cursor: pointer; }
   #profil_right {
-    display: flex;
     background-color: pink;
     width: 20vw;
     height: 70vh; }

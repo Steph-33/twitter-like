@@ -36,5 +36,6 @@ exports.findAll = (request, response) => {
           tweet : tweet
         });
         // console.log(response.render)
-  });
+  }); 
 };
+
