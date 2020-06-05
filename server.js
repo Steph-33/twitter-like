@@ -11,6 +11,7 @@ const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
 const logger = require('morgan');
+const isAuth = require('./middleware/isAuth');
 
 var orm = require("./database/database.js");
 

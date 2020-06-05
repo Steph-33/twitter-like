@@ -4,6 +4,7 @@ let urlencodedParser = bodyParser.urlencoded({ extended: false })
 // const bcrypt = require("bcrypt");
 const passport = require('passport');
 const flash = require('express-flash');
+const isAuth = require('../middleware/isAuth')
 
 // midleware express
 const router = express.Router();
@@ -14,7 +15,7 @@ const Tweet = require("../models/tweet");
 
 
 // ------> routes GET & POST pour page "tweetactu" qui utilise les fonctions du controller
-router.get("/tweetactu", tweetController.findAll);
+router.get("/tweetactu",isAuth, tweetController.findAll);
 
 router.post("/tweetactu", tweetController.add)
 
@@ -30,9 +31,7 @@ router.get("/inscription", (request,response) => {
 router.post("/inscription", userController.add);
 
 //route GET profil
-router.get("/profil", (request,response) => {
-  response.render('profil.handlebars');
-});
+router.get("/profil",isAuth,userController.findInfo);
 
 // -----> routes générales pour home etc
 router.get("/", (request, response) => {
