@@ -31,17 +31,13 @@
             </div>
         </section>
         <section id="inscription_right_middle">
-            <div id="inscription_right_middle_left">
-                <form id="inscription_right_middle_left_top" method="POST" action="/inscription">
-                    <input id="inscription_right_middle_left_top_name" type="text" name="userName" placeholder="Nom" >
-                    <input id="inscription_right_middle_left_top_pseudo" type="text" name="userPseudo" placeholder="Pseudo">
-                    <input id="inscription_right_middle_left_top_email" type="email" name="userEmailAdress" placeholder="Adresse Email">
-                    <input id="inscription_right_middle_left_top_password" type="password" name="userPassword" placeholder="Mot de Passe">
-                    {{!-- <input id="inscription_form_userpicture" type="file" name="userPicture"> --}}
-                    <button id="inscription_right_middle_left_top_button" type="submit">Envoyer</button>
-                </form>
-                {{!-- <div id="inscription_right_middle_left_bottom"></div> --}}
-            </div>
+            <form id="inscription_right_middle_left" method="POST" action="/inscription">
+                <input id="inscription_right_middle_left_name" type="text" name="userName" placeholder="Nom" >
+                <input id="inscription_right_middle_left_pseudo" type="text" name="userPseudo" placeholder="Pseudo">
+                <input id="inscription_right_middle_left_email" type="email" name="userEmailAdress" placeholder="Adresse Email">
+                <input id="inscription_right_middle_left_password" type="password" name="userPassword" placeholder="Mot de Passe">
+                <button id="inscription_right_middle_left_button" type="submit">Envoyer</button>
+            </form>
             <div id="inscription_right_middle_right"></div>
         </section>
         <section id="inscription_right_bottom"></section>
