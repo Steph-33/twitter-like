@@ -8,8 +8,9 @@ function connectToDB() {
  connection = mysql.createConnection({
     host     : "localhost",
     user     : "root",
-    password : "Girondins33!",
+    password : "root",
     database : "twitterlike", 
+    socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock' //for mac and linux
   });
 
   connection.connect(function (err) {

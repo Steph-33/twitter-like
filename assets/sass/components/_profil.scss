@@ -1,0 +1,43 @@
+// * {
+//     margin: 0;
+//     padding: 0;
+//     box-sizing: border-box;
+// }
+#header {
+    background-color: $color-blue;
+    height: 30vh;
+    width: 100vw;
+}
+#profil {
+    display: flex;
+    justify-content: center;
+
+
+    
+    
+    
+    &_left {
+        background-color: $color-yellow;
+        width: 20vw;
+        height: 70vh;    
+        
+    }
+    &_content {
+        background-color: $color-red;
+        width: 40vw;
+        height: 70vh;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &_right {
+        display: flex;
+        background-color: pink;
+        width: 20vw;
+        height: 70vh;
+    }
+                
+              
+
+}

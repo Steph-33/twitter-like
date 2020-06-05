@@ -119,58 +119,111 @@ body {
   border-right: solid medium black;
 }
 #tweetactu_filActu {
-  height: 100%;
   width: 50%;
-  background-color: #FBD531;
   border-bottom: solid medium black;
   border-top: solid medium black;
   display: flex;
   flex-direction: column;
 }
 #tweetactu_filActu_titre {
-  height: 10%;
+  height: 8%;
   background-color: #0F15A7;
   border-bottom: solid medium black;
   color: white;
-  font-size: 0.8;
+  font-size: 0.8 rem;
   font-weight: bold;
 }
 #tweetactu_filActu_creation {
-  height: 90%;
+  height: 30%;
   background-color: white;
+  padding: 5%;
   display: flex;
   flex-direction: column;
 }
-#tweetactu_filActu_creation_infodutweet {
-  height: 4%;
+#tweetactu_filActu_creation_main {
+  height: 85%;
+  display: flex;
+  padding: 1rem;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+#tweetactu_filActu_creation_main_profil {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#tweetactu_filActu_creation_main_profil_picture {
+  height: 4rem;
+  width: 4rem;
+  background-color: grey;
+  border-radius: 3rem;
+  font-size: 0.8rem;
+}
+#tweetactu_filActu_creation_main_profil_infodutweet {
   color: grey;
   font-size: 0.65rem;
 }
-#tweetactu_filActu_creation_main {
-  height: 70%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-}
-#tweetactu_filActu_creation_main_picture {
-  height: 3rem;
-  width: 3rem;
-  background-color: grey;
-  border-radius: 2rem;
-  font-size: 0.8rem;
-}
 #tweetactu_filActu_creation_main_content {
-  width: 70%;
+  width: 80%;
+  padding-right: 10%;
 }
-#tweetactu_filActu_creation_buttons {
-  height: 5%;
-  display: flex;
+#tweetactu_filActu_creation_main_content textarea {
+  background-color: rgba(150, 147, 147, 0.603);
+  resize: none;
+  height: 5rem;
+  border-radius: 0.5rem;
 }
-#tweetactu_filActu_creation_lien {
-  height: 5%;
+#tweetactu_filActu_archive {
+  height: 62%;
+  width: 100%;
+  padding: 2%;
+  overflow: scroll;
+}
+#tweetactu_filActu_archive_each {
+  height: 30%;
+  background-color: #FBD531;
+  border: solid thin grey;
+  margin: 1%;
+  padding: 3% 6% 3% 6%;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+}
+#tweetactu_filActu_archive_each_tweet {
+  height: 80%;
   display: flex;
+  justify-content: space-around;
+}
+#tweetactu_filActu_archive_each_tweet_profil {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#tweetactu_filActu_archive_each_tweet_profil_picture {
+  height: 4rem;
+  width: 4rem;
+  background-color: grey;
+  border-radius: 3rem;
   font-size: 0.8rem;
+}
+#tweetactu_filActu_archive_each_tweet_profil_infodutweet {
+  width: 30%;
+}
+#tweetactu_filActu_archive_each_tweet_content {
+  height: 70%;
+  width: 70%;
+  background-color: rgba(128, 128, 128, 0.178);
+  border-radius: 1rem;
+  padding: 3%;
+}
+#tweetactu_filActu_archive_each_buttons {
+  height: 20%;
+  padding-right: 10%;
+  padding-left: 5%;
+  display: flex;
+  justify-content: space-around;
 }
 #tweetactu_right {
   height: 100%;
@@ -361,6 +414,36 @@ body {
   border-top: solid medium black;
   border-right: solid medium black;
   border-bottom: solid medium black;
+}
+
+#header {
+  background-color: #0F15A7;
+  height: 30vh;
+  width: 100vw;
+}
+
+#profil {
+  display: flex;
+  justify-content: center;
+}
+#profil_left {
+  background-color: #FBD531;
+  width: 20vw;
+  height: 70vh;
+}
+#profil_content {
+  background-color: #DD0000;
+  width: 40vw;
+  height: 70vh;
+}
+#profil_content:hover {
+  cursor: pointer;
+}
+#profil_right {
+  display: flex;
+  background-color: pink;
+  width: 20vw;
+  height: 70vh;
 }
 
 /*# sourceMappingURL=home.css.map */

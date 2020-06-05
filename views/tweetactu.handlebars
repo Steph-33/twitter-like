@@ -40,38 +40,47 @@
         </div>
 
         <div id=tweetactu_filActu_creation>
-            <p id=tweetactu_filActu_creation_infodutweet> {{userName}} @{{userPseudo}}</p>
             <div id=tweetactu_filActu_creation_main>
-                {{!-- <div id=tweetactu_filActu_creation_main> --}}
-                <img id=tweetactu_filActu_creation_main_picture href="" alt=profil picture>
-                {{!-- </div> --}}
+                <div id=tweetactu_filActu_creation_main_profil>
+                    <img id=tweetactu_filActu_creation_main_profil_picture href="" alt=profil picture>
+                    <p id=tweetactu_filActu_creation__main_profil_infodutweet> {{userName}} @{{userPseudo}}</p>
+                </div>
+
                 <form id=tweetactu_filActu_creation_main_content method="POST" action="/tweetactu">
                     <textarea name="tweetContent" cols="50"  maxlength="140" placeholder="What's new ?"> </textarea>
                     <button type="submit">Publish</button>
                 </form>
             </div>
-            <div id=tweetactu_filActu_creation_buttons>
+            <div id=tweetactu_filActu_creation_details>
                 <p id=tweetactu_filActu_creation_buttons-tweetDate> {{tweetDate}} </p>
-                <button id=tweetactu_filActu_creation_buttons-countLike type="submit">&#9829; Like</button>
-                <button id=tweetactu_filActu_creation_buttons-countRetweet type="submit">&#8618; Retweet</button>
+                {{!-- <p> https://localhost:8080/tweetactu </p> --}}
+                {{!-- <button id=tweetactu_filActu_creation_buttons-countLike type="submit">&#9829; Like</button>
+                <button id=tweetactu_filActu_creation_buttons-countRetweet type="submit">&#8618; Retweet</button> --}}
             </div>
-            <div id=tweetactu_filActu_creation_lien>
-                <p> https://localhost:8080/tweetactu </p>
-            </div>
+
 
         </div>
 
-        {{#each tweet}} 
         <div id=tweetactu_filActu_archive>
-            <p class=archive-userInfo> {{userName}} @{{userPseudo}}</p>
-            <p class=archive-tweetDate> {{tweetDate}} </p>
-            <p class=archive-tweetPublished>{{content}}<p/>
-            <p class=archive-countLikes > Likes </p>
-            <p class=archive-countRetweet > Retweet</p>
-            <p class=archive-url> https://qeswgvyjkln </p>
-
+            {{#each tweet}} 
+            <div id=tweetactu_filActu_archive_each>
+                <div id=tweetactu_filActu_archive_each_tweet>
+                    <div id=tweetactu_filActu_archive_each_tweet_profil>
+                        <img id=tweetactu_filActu_archive_each_tweet_profil_picture href="" alt=profil picture>
+                        <p id=tweetactu_filActu_archive_each_tweet_profil_infodutweet> {{userName}} @{{userPseudo}}</p>
+                    </div>
+                    {{!-- <p id=tweetactu_filActu_archive_each_tweet_infodutweet> {{userName}} @{{userPseudo}}</p> --}}
+                    <p id=tweetactu_filActu_archive_each_tweet_content>{{content}}<p/>
+                </div>
+                <div id=tweetactu_filActu_archive_each_buttons>
+                    <p id=tweetactu_filActu_archive_each_buttons_tweetDate> {{tweetDate}} </p>
+                    <button id=tweetactu_filActu_archive_each_buttons_countLikes type="submit">&#9829; Like</button>
+                    <button id=tweetactu_filActu_archive_each_buttons_url type="submit">&#8618; Retweet</button>
+                    <p id=tweetactu_filActu_archive_each_url> https://qeswgvyjkln </p>
+                </div>
+            </div>
+            {{/each}}
         </div>
-        {{/each}}
 
     </main>
 
@@ -79,6 +88,7 @@
         <div>
             <p>test</p>
             {{> logout_button}}
+            {{> profil_button}}
         </div>
     </section>
 
