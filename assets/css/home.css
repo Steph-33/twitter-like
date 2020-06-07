@@ -2,7 +2,20 @@ body {
   background-color: white;
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
 }
+=======
+  font-family: 'VT323', monospace; }
+@font-face {
+  body {
+    font-family: 'VT323', monospace;
+    font-weight: 400;
+    src: url(../font/VT323-Regular.ttf); } }
+  body button {
+    font-family: 'VT323', monospace; }
+  body input {
+    font-family: 'VT323', monospace; }
+>>>>>>> 42fa6e1fc765bfc5eab01eb092ef4fa438972450
 
 #tweetactu {
   height: 99vh;
@@ -240,6 +253,7 @@ body {
 
 #inscription {
   display: flex;
+<<<<<<< HEAD
   flex-direction: row;
 }
 #inscription_left {
@@ -412,202 +426,321 @@ body {
   border-right: solid medium black;
   border-bottom: solid medium black;
 }
+=======
+  flex-direction: row; }
+  #inscription_left {
+    display: flex;
+    flex-direction: column; }
+    #inscription_left_top {
+      display: flex;
+      flex-direction: row; }
+      #inscription_left_top_left {
+        width: 8rem;
+        height: 8rem;
+        background-color: #FBD531;
+        border: solid medium black; }
+      #inscription_left_top_right {
+        width: 20rem;
+        height: 8rem;
+        border-bottom: solid medium black;
+        text-align: center;
+        padding-top: 10%; }
+    #inscription_left_middle {
+      display: flex;
+      flex-direction: row; }
+      #inscription_left_middle_left {
+        width: 8rem;
+        height: 20rem;
+        border-right: solid medium black; }
+      #inscription_left_middle_right {
+        width: 20rem;
+        height: 20rem; }
+    #inscription_left_bottom {
+      display: flex;
+      flex-direction: column; }
+      #inscription_left_bottom_up {
+        width: 28rem;
+        height: 8rem;
+        background-color: #0F15A7; }
+      #inscription_left_bottom_down {
+        width: 28rem;
+        height: 6rem; }
+  #inscription_middle {
+    display: flex;
+    flex-direction: column; }
+    #inscription_middle_top {
+      width: 6rem;
+      height: 22rem;
+      border-left: solid medium black;
+      border-right: solid medium black; }
+    #inscription_middle_middle {
+      width: 6rem;
+      height: 6rem;
+      border: solid medium black;
+      background-color: #FBD531; }
+    #inscription_middle_bottom {
+      width: 6rem;
+      height: 14rem;
+      border-left: solid medium black;
+      border-right: solid medium black; }
+  #inscription_right {
+    display: flex;
+    flex-direction: column; }
+    #inscription_right_top {
+      display: flex;
+      flex-direction: column; }
+      #inscription_right_top_top {
+        width: 50rem;
+        height: 4.5rem;
+        background-color: #DD0000;
+        border-top: solid medium black;
+        border-right: solid medium black;
+        border-bottom: solid medium black; }
+      #inscription_right_top_middle {
+        display: flex;
+        flex-direction: row; }
+        #inscription_right_top_middle_left {
+          width: 42rem;
+          height: 4.5rem;
+          border-bottom: solid medium black; }
+        #inscription_right_top_middle_right {
+          width: 8rem;
+          height: 4.5rem;
+          border-left: solid medium black;
+          border-bottom: solid medium black;
+          border-right: solid medium black; }
+      #inscription_right_top_bottom {
+        display: flex;
+        flex-direction: row; }
+        #inscription_right_top_bottom_left {
+          width: 42rem;
+          height: 4rem;
+          background-color: #0F15A7;
+          border-bottom: solid medium black;
+          color: #FBD531;
+          text-align: center;
+          font-size: xx-large;
+          padding-top: 1.2vh; }
+        #inscription_right_top_bottom_right {
+          width: 8rem;
+          height: 4rem;
+          border-left: solid medium black;
+          border-bottom: solid medium black;
+          border-right: solid medium black; }
+    #inscription_right_middle {
+      display: flex;
+      flex-direction: row; }
+      #inscription_right_middle_left {
+        display: flex;
+        flex-direction: column;
+        width: 42rem;
+        height: 21rem; }
+        #inscription_right_middle_left_name, #inscription_right_middle_left_pseudo, #inscription_right_middle_left_email, #inscription_right_middle_left_password {
+          margin-left: 7vw;
+          width: 30rem;
+          margin-top: 5vh;
+          padding-top: 1vh;
+          padding-bottom: 1vh;
+          padding-left: 2vw;
+          font-size: large;
+          border-color: #16829C;
+          color: #16829C; }
+        #inscription_right_middle_left_button {
+          margin-top: 7.8vh;
+          background-color: #DD0000;
+          color: white;
+          font-size: xx-large;
+          padding-top: 2.5vh;
+          padding-bottom: 2.5vh;
+          border-top: solid medium black;
+          border-left: none;
+          border-right: none;
+          border-bottom: none;
+          cursor: pointer; }
+      #inscription_right_middle_right {
+        height: 25rem;
+        width: 8rem;
+        border-right: solid medium black;
+        border-left: solid medium black; }
+    #inscription_right_bottom {
+      width: 50rem;
+      height: 4rem;
+      background-color: #FBD531;
+      border-top: solid medium black;
+      border-right: solid medium black;
+      border-bottom: solid medium black; }
+>>>>>>> 42fa6e1fc765bfc5eab01eb092ef4fa438972450
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 #connexion {
   display: flex;
-  flex-direction: row;
-}
-#connexion_left {
-  display: flex;
-  flex-direction: column;
-}
-#connexion_left_top {
-  display: flex;
-  flex-direction: row;
-}
-#connexion_left_top_left {
-  width: 8rem;
-  height: 8rem;
-  background-color: #FBD531;
-  border: solid medium black;
-}
-#connexion_left_top_right {
-  width: 20rem;
-  height: 8rem;
-  border-bottom: solid medium black;
-  text-align: center;
-  padding-top: 10%;
-}
-#connexion_left_middle {
-  display: flex;
-  flex-direction: row;
-}
-#connexion_left_middle_left {
-  width: 8rem;
-  height: 20rem;
-  border-right: solid medium black;
-}
-#connexion_left_middle_right {
-  width: 20rem;
-  height: 20rem;
-}
-#connexion_left_bottom {
-  display: flex;
-  flex-direction: column;
-}
-#connexion_left_bottom_up {
-  width: 28rem;
-  height: 8rem;
-  background-color: #0F15A7;
-}
-#connexion_left_bottom_up_button {
-  background-color: #0F15A7;
-  border: none;
-  margin-top: 4.5vh;
-}
-#connexion_left_bottom_up_button_link {
-  text-decoration: none;
-  font-size: x-large;
-  color: white;
-  background-color: #0F15A7;
-}
-#connexion_left_bottom_down {
-  width: 28rem;
-  height: 6rem;
-  border-bottom: solid medium black;
-}
-#connexion_middle {
-  display: flex;
-  flex-direction: column;
-}
-#connexion_middle_top {
-  width: 6rem;
-  height: 22rem;
-  border-left: solid medium black;
-  border-right: solid medium black;
-}
-#connexion_middle_middle {
-  width: 6rem;
-  height: 6rem;
-  border: solid medium black;
-  background-color: #FBD531;
-}
-#connexion_middle_bottom {
-  width: 6rem;
-  height: 14rem;
-  border-left: solid medium black;
-  border-right: solid medium black;
-  border-bottom: solid medium black;
-}
-#connexion_right {
-  display: flex;
-  flex-direction: column;
-}
-#connexion_right_top {
-  display: flex;
-  flex-direction: column;
-}
-#connexion_right_top_top {
-  display: flex;
-  flex-direction: row;
-  width: 50rem;
-  height: 4.5rem;
-  background-color: #DD0000;
-  border-top: solid medium black;
-  border-right: solid medium black;
-  border-bottom: solid medium black;
-}
-#connexion_right_top_middle {
-  display: flex;
-  flex-direction: row;
-}
-#connexion_right_top_middle_left {
-  width: 42rem;
-  height: 4.5rem;
-  border-bottom: solid medium black;
-}
-#connexion_right_top_middle_right {
-  width: 8rem;
-  height: 4.5rem;
-  border-left: solid medium black;
-  border-bottom: solid medium black;
-  border-right: solid medium black;
-}
-#connexion_right_top_bottom {
-  display: flex;
-  flex-direction: row;
-}
-#connexion_right_top_bottom_left {
-  width: 42rem;
-  height: 6rem;
-  background-color: #0F15A7;
-  border-bottom: solid medium black;
-  color: #FBD531;
-  text-align: center;
-  font-size: xx-large;
-  padding-top: 1.2vh;
-}
-#connexion_right_top_bottom_right {
-  width: 8rem;
-  height: 6rem;
-  border-left: solid medium black;
-  border-bottom: solid medium black;
-  border-right: solid medium black;
-}
-#connexion_right_middle {
-  display: flex;
-  flex-direction: row;
-}
-#connexion_right_middle_left {
-  display: flex;
-  flex-direction: column;
-  width: 42rem;
-  height: 19rem;
-}
-#connexion_right_middle_left_email, #connexion_right_middle_left_password {
-  margin-left: 7vw;
-  width: 30rem;
-  margin-top: 10vh;
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  padding-left: 2vw;
-  font-size: large;
-  border-color: #16829C;
-  color: #16829C;
-}
-#connexion_right_middle_left_button {
-  margin-top: 15vh;
-  background-color: #DD0000;
-  color: white;
-  font-size: xx-large;
-  padding-top: 2.5vh;
-  padding-bottom: 2.5vh;
-  border-top: solid medium black;
-  border-left: none;
-  border-right: none;
-  border-bottom: none;
-  cursor: pointer;
-}
-#connexion_right_middle_right {
-  height: 23rem;
-  width: 8rem;
-  border-right: solid medium black;
-  border-left: solid medium black;
-}
-#connexion_right_bottom {
-  width: 50rem;
-  height: 4rem;
-  background-color: #FBD531;
-  border-top: solid medium black;
-  border-right: solid medium black;
-  border-bottom: solid medium black;
-}
+  flex-direction: row; }
+  #connexion_left {
+    display: flex;
+    flex-direction: column; }
+    #connexion_left_top {
+      display: flex;
+      flex-direction: row; }
+      #connexion_left_top_left {
+        width: 8rem;
+        height: 8rem;
+        background-color: #FBD531;
+        border: solid medium black; }
+      #connexion_left_top_right {
+        width: 20rem;
+        height: 8rem;
+        border-bottom: solid medium black;
+        text-align: center;
+        padding-top: 10%; }
+    #connexion_left_middle {
+      display: flex;
+      flex-direction: row; }
+      #connexion_left_middle_left {
+        width: 8rem;
+        height: 20rem;
+        border-right: solid medium black; }
+      #connexion_left_middle_right {
+        width: 20rem;
+        height: 20rem; }
+    #connexion_left_bottom {
+      display: flex;
+      flex-direction: column; }
+      #connexion_left_bottom_up {
+        width: 28rem;
+        height: 8rem;
+        background-color: #0F15A7;
+        border-top: solid medium black;
+        border-bottom: solid medium black; }
+      #connexion_left_bottom_down {
+        width: 28rem;
+        height: 6rem;
+        border-bottom: solid medium black; }
+  #connexion_middle {
+    display: flex;
+    flex-direction: column; }
+    #connexion_middle_top {
+      width: 6rem;
+      height: 22rem;
+      border-left: solid medium black;
+      border-right: solid medium black; }
+    #connexion_middle_middle {
+      width: 6rem;
+      height: 6rem;
+      border: solid medium black;
+      background-color: #FBD531; }
+    #connexion_middle_bottom {
+      width: 6rem;
+      height: 14rem;
+      border-left: solid medium black;
+      border-right: solid medium black;
+      border-bottom: solid medium black; }
+  #connexion_right {
+    display: flex;
+    flex-direction: column; }
+    #connexion_right_top {
+      display: flex;
+      flex-direction: column; }
+      #connexion_right_top_top {
+        display: flex;
+        flex-direction: row;
+        width: 50rem;
+        height: 4.5rem;
+        background-color: #DD0000;
+        border-top: solid medium black;
+        border-right: solid medium black;
+        border-bottom: solid medium black; }
+      #connexion_right_top_middle {
+        display: flex;
+        flex-direction: row; }
+        #connexion_right_top_middle_left {
+          width: 42rem;
+          height: 4.5rem;
+          border-bottom: solid medium black; }
+        #connexion_right_top_middle_right {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 8rem;
+          height: 4.5rem;
+          border-left: solid medium black;
+          border-bottom: solid medium black;
+          border-right: solid medium black;
+          background-color: #FBD531; }
+          #connexion_right_top_middle_right:hover {
+            cursor: pointer;
+            opacity: 0.5; }
+          #connexion_right_top_middle_right_link {
+            text-decoration: none;
+            font-size: x-large;
+            color: black;
+            text-align: center; }
+      #connexion_right_top_bottom {
+        display: flex;
+        flex-direction: row; }
+        #connexion_right_top_bottom_left {
+          width: 42rem;
+          height: 6rem;
+          background-color: #0F15A7;
+          border-bottom: solid medium black;
+          color: white;
+          text-align: center;
+          font-size: xx-large;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+        #connexion_right_top_bottom_right {
+          width: 8rem;
+          height: 6rem;
+          border-left: solid medium black;
+          border-bottom: solid medium black;
+          border-right: solid medium black; }
+    #connexion_right_middle {
+      display: flex;
+      flex-direction: row; }
+      #connexion_right_middle_left {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column;
+        width: 42rem;
+        height: 100%; }
+        #connexion_right_middle_left_email, #connexion_right_middle_left_password {
+          width: 80%;
+          height: 11%;
+          margin-bottom: 11%;
+          font-size: large;
+          border-color: #16829C;
+          color: #16829C; }
+        #connexion_right_middle_left_button {
+          height: 15%;
+          width: 100%;
+          background-color: #DD0000;
+          color: white;
+          font-size: xx-large;
+          border-top: solid medium black;
+          border-left: none;
+          border-right: none;
+          border-bottom: none;
+          cursor: pointer; }
+          #connexion_right_middle_left_button:hover {
+            opacity: 0.5;
+            cursor: pointer; }
+      #connexion_right_middle_right {
+        height: 23rem;
+        width: 8rem;
+        border-right: solid medium black;
+        border-left: solid medium black; }
+    #connexion_right_bottom {
+      width: 50rem;
+      height: 4rem;
+      background-color: #FBD531;
+      border-top: solid medium black;
+      border-right: solid medium black;
+      border-bottom: solid medium black; }
 
 #header {
   display: grid;
