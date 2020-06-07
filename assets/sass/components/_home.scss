@@ -56,20 +56,11 @@
                 width: 28rem;
                 height: 8rem;
                 background-color: $color-blue;
+                border-top:$border-ok ;
+                border-bottom:$border-ok ;
 
-                &_button{
-                    background-color: $color-blue;
-                    border: none;
-                    margin-top: 4.5vh;
 
-                    &_link{
-                        text-decoration: none;
-                        font-size: x-large;
-                        color: white;
-                        background-color: $color-blue;
-                        
-                    }
-                }
+                
             }
 
             &_down{
@@ -124,6 +115,7 @@
                 border-top: $border-ok;
                 border-right: $border-ok;
                 border-bottom: $border-ok;
+                
             }
 
             &_middle{
@@ -135,26 +127,47 @@
                     border-bottom: $border-ok;
                 }
                 &_right{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     width: 8rem;
                     height: 4.5rem;
                     border-left: $border-ok;
                     border-bottom: $border-ok;
                     border-right: $border-ok;
+                    background-color: $color-yellow;
+                    &:hover {
+                        cursor: pointer;
+                        opacity: 0.5;
+                    }
+                    &_link{
+                        text-decoration: none;
+                        font-size: x-large;
+                        color: black;
+                        text-align: center;
+                        // background-color: $color-blue;
+                        
+                    }
+                
                 }
             }
 
             &_bottom{
                 display: flex;
+                
                 flex-direction: row;
                 &_left{
                     width: 42rem;
                     height: 6rem;
                     background-color: $color-blue;
                     border-bottom: $border-ok;
-                    color: $color-yellow;
+                    color: white;
                     text-align: center;
                     font-size: xx-large;
-                    padding-top: 1.2vh;
+                    // padding-top: 1.2vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
                 &_right{
                     width: 8rem;
@@ -172,34 +185,44 @@
 
             &_left{
                 display: flex;
+                justify-content: flex-end;
+                align-items: center;
                 flex-direction: column;
                 width: 42rem;
-                height: 19rem;                    
+                height: 100%;                  
 
                     &_email, &_password{
-                        margin-left: 7vw;
-                        width: 30rem;
-                        margin-top: 10vh;
-                        padding-top: 1vh;
-                        padding-bottom: 1vh;
-                        padding-left: 2vw;
+                        // margin-left: 7vw;
+                        width: 80%;
+                        height: 11%;
+                        margin-bottom: 11%;
+                        // padding-top: 1vh;
+                        // padding-bottom: 1vh;
+                        // padding-left: 2vw;
                         font-size: large;
                         border-color: #16829C;
                         color: #16829C;
                     }
 
                     &_button{
-                        margin-top: 15vh;
+                       
+                        // margin-top: 15vh;
+                        height: 15%;
+                        width: 100%;
                         background-color: $color-red;
                         color: white;
                         font-size: xx-large;
-                        padding-top: 2.5vh;
-                        padding-bottom: 2.5vh;
+                        // padding-top: 2.5vh;
+                        // padding-bottom: 2.5vh;
                         border-top: $border-ok;
                         border-left: none;
                         border-right: none;
                         border-bottom: none;
                         cursor: pointer;
+                        &:hover {
+                            opacity: 0.5;
+                            cursor: pointer;
+                        }
                     }
             }
 
