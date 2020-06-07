@@ -5,8 +5,8 @@ var orm = require("./../database/database.js");
 let db = orm.connectToDB();
 
 class Tweet {
-  constructor(props) {
-    const { userName, userPseudo, tweetDate, tweetContent, url, countLikes, countRetweet } = props;
+  constructor(props, userName, userPseudo) {
+    const { tweetDate, tweetContent, url, countLikes, countRetweet } = props;
     console.log(props)
     this.userName = userName;
     this.userPseudo = userPseudo;
