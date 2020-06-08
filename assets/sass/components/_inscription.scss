@@ -122,6 +122,7 @@
                     border-left: $border-ok;
                     border-bottom: $border-ok;
                     border-right: $border-ok;
+                    background-color: $color-yellow;
                 }
             }
 
@@ -171,12 +172,12 @@
                     }
 
                     &_button{
-                        margin-top: 7.8vh;
+                        margin-top: 11vh;
                         background-color: $color-red;
                         color: white;
                         font-size: xx-large;
-                        padding-top: 2.5vh;
-                        padding-bottom: 2.5vh;
+                        padding-top: 1.5vh;
+                        padding-bottom: 3vh;
                         border-top: $border-ok;
                         border-left: none;
                         border-right: none;
