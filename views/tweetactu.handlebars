@@ -36,13 +36,13 @@
 
     <main id=tweetactu_filActu>
         <div id=tweetactu_filActu_titre>
-            <h1>Accueil monstre</h1>
+            <h1>Accueil</h1>
         </div>
 
         <div id=tweetactu_filActu_creation>
             <div id=tweetactu_filActu_creation_main>
                 <div id=tweetactu_filActu_creation_main_profil>
-                    <img id=tweetactu_filActu_creation_main_profil_picture href="" alt=profil picture>
+                    <img id=tweetactu_filActu_creation_main_profil_picture href="">
                     <p id=tweetactu_filActu_creation__main_profil_infodutweet> {{userName}} @{{userPseudo}}</p>
                 </div>
 
@@ -66,7 +66,7 @@
             <div id=tweetactu_filActu_archive_each>
                 <div id=tweetactu_filActu_archive_each_tweet>
                     <div id=tweetactu_filActu_archive_each_tweet_profil>
-                        <img id=tweetactu_filActu_archive_each_tweet_profil_picture href="" alt=profil picture>
+                        <img id=tweetactu_filActu_archive_each_tweet_profil_picture href="">
                         <p id=tweetactu_filActu_archive_each_tweet_profil_infodutweet> {{userName}} @{{userPseudo}}</p>
                     </div>
                     {{!-- <p id=tweetactu_filActu_archive_each_tweet_infodutweet> {{userName}} @{{userPseudo}}</p> --}}
@@ -76,7 +76,7 @@
                     <p id=tweetactu_filActu_archive_each_buttons_tweetDate> {{tweetDate}} </p>
                     <button id=tweetactu_filActu_archive_each_buttons_countLikes type="submit">&#9829; Like</button>
                     <button id=tweetactu_filActu_archive_each_buttons_url type="submit">&#8618; Retweet</button>
-                    <p id=tweetactu_filActu_archive_each_url> https://qeswgvyjkln </p>
+                    <p id=tweetactu_filActu_archive_each_url> </p>
                 </div>
             </div>
             {{/each}}
@@ -85,11 +85,36 @@
     </main>
 
     <section id=tweetactu_right>
-        <div>
+       
+            <div id=tweetactu_right_top>
+                <div id=tweetactu_right_top_left>
+                    <div id=tweetactu_right_top_left_top></div>
+                    <div id=tweetactu_right_top_left_down>
+                        <div id=tweetactu_right_top_left_down_left>
+                            {{> profil_button}}
+                        </div>
+                        <div id=tweetactu_right_top_left_down_right>
+                            {{> logout_button}}
+                        </div>
+                    </div>
+                </div>
+                <div id=tweetactu_right_top_right></div>
+            </div>
+
+            <div id=tweetactu_right_down>
+                <div id=tweetactu_right_down_left>
+                    <div id=tweetactu_right_down_left_bottom></div>
+                </div>
+            </div>
+
+
+
+
+ {{!-- <div>
             <p>test</p>
             {{> logout_button}}
             {{> profil_button}}
-        </div>
+        </div> --}}
     </section>
 
 </section>
